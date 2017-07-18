@@ -29,16 +29,44 @@
 // That'll be what we refer to from here on...
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_GRB + NEO_KHZ800);
 
+//global brightess
+int brightness = 250;
+
+//reference timer
+unsigned long previousMillis = 0;
+unsigned long previousMillisDimOut = 0;
+unsigned long previousMillisDimIn = 0;
+//timer
+unsigned long currentMillis = 0;
+
+int pixel_timer[32];
+int pixel1_timer = 0;
+
+int pixel_loc[32];
+int pixel1_loc = 0;
+
+
 void setup()
 {
+  Serial.begin(9600);
+  
   leds.begin();  // Call this to start up the LED strip.
   clearLEDs();   // This function, defined below, turns all LEDs off...
   leds.setBrightness(250);
   leds.show();   // ...but the LEDs don't actually update until you call this.
+
+  //ledPos(IVORY, 50, 60);
 }
 
 void loop()
 {
+
+  //first:  update timer
+  currentMillis = millis();
+
+  //second: clear strip every frame
+   clearLEDs();  // Turn off all LEDs
+  
   /*
   // Ride the Rainbow Road
   for (int i=0; i<LED_COUNT*1; i++)
@@ -66,34 +94,171 @@ void loop()
   */
   //cascade(WHITE, TOP_DOWN, 100);
   //gotoled(WHITE, 30, 60, 20);
-  ledPos(IVORY, 1000, 50, 60);
+  
+  //ESTO FUNCIONA
+  //ledPos(IVORY, 1000, 50, 60);
   
   //gotoled(WHITE, 55, 40, 20);
   //gotoled(WHITE, 40, 45, 40);
   //for(int i=0;i<20;i++){
     //gotoled(WHITE, 40+random(10), 45+random(10), 50);
   //}
-  /*
-  for(int i = 0;i<200;i++){
-    leds.setBrightness(255 - i);
-    leds.show();   // ...but the LEDs don't actually update until you call this.
-    delay(10);
-  }
-  for(int i = 0;i<200;i++){
-    leds.setBrightness(55 + i);
-    leds.show();   // ...but the LEDs don't actually update until you call this.
-    delay(10);
-  }
-  */
-  dimout(255,155,10);
-  dimin(155,200,10);
-  dimout(180,50,10);
-  dimin(50,255,10);
- 
 
+
+
+  /*
+   * PRUEBAS DE CONTROL SIN UTILIZAR DELAY()
+   */
+
+  //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
+  if (currentMillis - previousMillis >= 500 && currentMillis - previousMillis < 1000 ) {
+    
+      ledBlock(IVORY, 50, 60);       
+  }
+
+
+  //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
+  if (currentMillis - previousMillis >= 1000 && currentMillis - previousMillis <= 2000 ) {
+    
+      ledBlock(IVORY, 40, 50);       
+  }
+  if (currentMillis - previousMillis > 2000 && currentMillis - previousMillis < 3000 ) {
+    
+      ledBlock(IVORY, 50, 60);       
+  }
+
+
+  //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
+  //DIMMING IS ALWAYS AN EFFECT AFTER SETTING SOME PIXEL-LED TO A VALUE
+  if (currentMillis - previousMillis >= 3100 && currentMillis - previousMillis <= 4500 ) {
+      ledBlock(IVORY, 50, 60); 
+      dimout(55,15);         
+  }
+  //AT 7 SEC UNTIL 10 SECS
+  if (currentMillis - previousMillis >= 4600 && currentMillis - previousMillis <= 7000 ) {
+      ledBlock(IVORY, 50, 60); 
+      dimin(250,15);         
+  }
+
+  //MOVE PIXELS WITH TRAJECTORIES
+  if (currentMillis - previousMillis >= 7100 && currentMillis - previousMillis <= 7400 ) {
+   pixel_loc[1] = random(60);
+   pixel_loc[2] = random(60);
+   pixel_loc[3] = random(60);
+   pixel_loc[4] = random(60);   
+   pixel_loc[5] = random(60);  
+  }
+  
+  if (currentMillis - previousMillis >= 7500 && currentMillis - previousMillis <= 14000 ) {
+      
+      gotoled(IVORY, pixel_loc[1], 1, random(260), 1);
+      gotoled(IVORY, pixel_loc[2], 69, random(261), 2);
+      gotoled(IVORY, pixel_loc[3], 55, random(262), 3);
+      gotoled(IVORY, pixel_loc[4], 10, random(263), 4);   
+      gotoled(IVORY, pixel_loc[5], 55, random(264), 5);  
+             
+  }
+  
+  if (currentMillis - previousMillis >= 14500 && currentMillis - previousMillis <= 12000 ){
+    //end blackout
+    clearLEDs();  // Turn off all LEDs
+  
+  }
+
+  //AT THE END: LAST LINE (avoid any other leds.show during the frame)
+  leds.show();
+  
+}
+//////////////////////END OF LOOP
+
+/*
+ * METHODS FOR WORKING WITH PIXEL-LED MOVEMENTS
+ */
+
+//Move one pixel from a location to another at a rate
+void gotoled(unsigned long color, int from, int to, int rate, int pix_number) {
+   
+    if (to>=from) {
+      if (currentMillis - pixel_timer[pix_number] >= rate) {
+        pixel_timer[pix_number] = currentMillis;
+        if(pixel_loc[pix_number] < to){
+          pixel_loc[pix_number] = pixel_loc[pix_number] + 1;
+        }   
+      }
+            
+    }
+    else {
+      if (currentMillis - pixel_timer[pix_number] >= rate) {
+        pixel_timer[pix_number] = currentMillis;
+        if(pixel_loc[pix_number] > to) {
+          pixel_loc[pix_number] = pixel_loc[pix_number] - 1; 
+        }  
+      }               
+    }  
+  
+ leds.setPixelColor(pixel_loc[pix_number], color);  // Set just this one 
+}
+
+
+
+
+void ledBlock(unsigned long color, int first, int last){
+      
+      for(int i=first;i<last;i++){
+        leds.setPixelColor(i, color);  // Set just this one
+      }
+          
+    
+}
+
+
+
+
+
+
+
+//dimming out until a brightness at a defined rate
+void dimout(int last, unsigned long rate){
+
+  if (currentMillis - previousMillisDimOut >= rate) {
+    
+    previousMillisDimOut = currentMillis;
+    
+    if(brightness >= last){
+      brightness = brightness -1;
+    }
+     
+    leds.setBrightness(brightness);
+  }
   
 }
 
+void dimin(int last, unsigned long rate){
+
+  if (currentMillis - previousMillisDimIn >= rate) {
+    
+    previousMillisDimIn = currentMillis;
+  
+    
+    if(brightness < last){
+      brightness = brightness + 1;
+    }
+
+    leds.setBrightness(brightness);
+   
+  }
+  
+}
+
+//get brightness
+
+int getBrightness(){
+  return brightness;
+}
+
+
+//dimming out with delay
+/*
 void dimout(int first, int last, int wait){
   for(int i = 0;i<(first-last);i++){
     leds.setBrightness(first - i);
@@ -101,7 +266,11 @@ void dimout(int first, int last, int wait){
     delay(10);
   }
 }
+*/
 
+
+//dimming in with delay
+/*
 void dimin(int first, int last, int wait){
   for(int i = 0;i<(last-first);i++){
     leds.setBrightness(first + i);
@@ -110,23 +279,9 @@ void dimin(int first, int last, int wait){
   }
 
 }
+*/
 
 
-void ledPos(unsigned long color, int wait, int first, int last){
-
-      clearLEDs();  // Turn off all LEDs
-
-      //leds.setPixelColor(first, color);
-      
-      for(int i=first;i<last;i++){
-        leds.setPixelColor(i, color);  // Set just this one
-      }
-      
-      
-      leds.show();
-      delay(wait);
-    
-}
 
 
 
@@ -180,30 +335,7 @@ void cylon(unsigned long color, byte wait)
   }
 }
 
-// Cascades a single direction. One time.
-void gotoled(unsigned long color, int from, int to, byte wait)
-{
-  if (to>from)
-  {
-    for (int i=from; i<to; i++)
-    {
-      clearLEDs();  // Turn off all LEDs
-      leds.setPixelColor(i, color);  // Set just this one
-      leds.show();
-      delay(wait);
-    }
-  }
-  else
-  {
-    for (int i=from-1; i>=to; i--)
-    {
-      clearLEDs();
-      leds.setPixelColor(i, color);
-      leds.show();
-      delay(wait);
-    }
-  }
-}
+
 
 
 
