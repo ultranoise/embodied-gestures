@@ -45,17 +45,22 @@ int pixel1_timer = 0;
 int pixel_loc[32];
 int pixel1_loc = 0;
 
+String inputString = "";         // a String to hold incoming data
+boolean receivedSerial = false;  // whether the string is complete
+
+boolean start = false;
 
 void setup()
 {
   Serial.begin(9600);
+  // reserve 200 bytes for the inputString:
+  inputString.reserve(200);
   
   leds.begin();  // Call this to start up the LED strip.
   clearLEDs();   // This function, defined below, turns all LEDs off...
   leds.setBrightness(250);
   leds.show();   // ...but the LEDs don't actually update until you call this.
 
-  //ledPos(IVORY, 50, 60);
 }
 
 void loop()
@@ -66,71 +71,76 @@ void loop()
 
   //second: clear strip every frame
    clearLEDs();  // Turn off all LEDs
-  
-  /*
+
+  //TEST ALL LEDS
+    /*
   // Ride the Rainbow Road
   for (int i=0; i<LED_COUNT*1; i++)
   {
     rainbow(i);
     delay(20);  // Delay between rainbow slides
   }
-  
-  // Indigo cylon
-  // Do a cylon (larson scanner) cycle 10 times
-  for (int i=0; i<10; i++)
-  {
-    // cylon function: first param is color, second is time (in ms) between cycles
-    cylon(WHITE, 100);  // Indigo cylon eye!
-  }
-
-  
-  // A light shower of spring green rain
-  // This will run the cascade from top->bottom 20 times
-  for (int i=0; i<20; i++)
-  {
-    // First parameter is the color, second is direction, third is ms between falls
-    cascade(WHITE, TOP_DOWN, 100); //SILVER, LIGHTCORAL, WHITESMOKE, GOSTWHITE, ANTIQUEWHITE
-  }
   */
-  //cascade(WHITE, TOP_DOWN, 100);
-  //gotoled(WHITE, 30, 60, 20);
+
+  // print the string when a newline arrives:
+  if (receivedSerial) {
+    Serial.println(inputString);
+
+    if (inputString =="0") {
+      start = true;
+      Serial.println("start performance");
+      previousMillis = currentMillis;
+    }
+    if (inputString =="1") {
+      start = true;
+      Serial.println("start performance");
+      previousMillis = currentMillis;
+    }
+    if (inputString =="2") {
+      start = true;
+      Serial.println("start performance");
+      previousMillis = currentMillis;
+    }
+
+    // clear the string:
+    inputString = "";
+    receivedSerial = false;
+    
+  }
+
   
-  //ESTO FUNCIONA
-  //ledPos(IVORY, 1000, 50, 60);
-  
-  //gotoled(WHITE, 55, 40, 20);
-  //gotoled(WHITE, 40, 45, 40);
-  //for(int i=0;i<20;i++){
-    //gotoled(WHITE, 40+random(10), 45+random(10), 50);
-  //}
-
-
-
-  /*
-   * PRUEBAS DE CONTROL SIN UTILIZAR DELAY()
-   */
+if(start){  //SECTION 1
 
   //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
-  if (currentMillis - previousMillis >= 500 && currentMillis - previousMillis < 1000 ) {
-    
-      ledBlock(IVORY, 50, 60);       
+  if (currentMillis - previousMillis > 500 && currentMillis - previousMillis < 1500 ) {
+      ledBlock(IVORY, 55, 60);
+      ledBlock(IVORY, 45, 50);         
   }
 
 
   //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
-  if (currentMillis - previousMillis >= 1000 && currentMillis - previousMillis <= 2000 ) {
-    
-      ledBlock(IVORY, 40, 50);       
+  if (currentMillis - previousMillis >= 1500 && currentMillis - previousMillis < 2500 ) {
+      ledBlock(IVORY, 35, 40);
+      ledBlock(IVORY, 25, 30);          
   }
-  if (currentMillis - previousMillis > 2000 && currentMillis - previousMillis < 3000 ) {
-    
-      ledBlock(IVORY, 50, 60);       
+  
+  if (currentMillis - previousMillis > 2500 && currentMillis - previousMillis < 3500 ) {
+      ledBlock(IVORY, 50, 60);
+      ledBlock(IVORY, 45, 50);       
   }
 
+  if (currentMillis - previousMillis >= 3500 && currentMillis - previousMillis <= 4000 ){
+    //end blackout
+    clearLEDs();  // Turn off all LEDs
+  
+  }
+  
+}
 
+/*
   //MAKE EVENT BETWEEN TWO MOMENTS (e.g. 3secs and 5.5 secs)
   //DIMMING IS ALWAYS AN EFFECT AFTER SETTING SOME PIXEL-LED TO A VALUE
-  if (currentMillis - previousMillis >= 3100 && currentMillis - previousMillis <= 4500 ) {
+  if (currentMillis - previousMillis >= 3500 && currentMillis - previousMillis <= 4500 ) {
       ledBlock(IVORY, 50, 60); 
       dimout(55,15);         
   }
@@ -158,18 +168,40 @@ void loop()
       gotoled(IVORY, pixel_loc[5], 55, random(264), 5);  
              
   }
-  
-  if (currentMillis - previousMillis >= 14500 && currentMillis - previousMillis <= 12000 ){
-    //end blackout
-    clearLEDs();  // Turn off all LEDs
-  
-  }
+  */
+
 
   //AT THE END: LAST LINE (avoid any other leds.show during the frame)
   leds.show();
   
 }
 //////////////////////END OF LOOP
+
+/*
+ * SERIAL READ
+ *
+ */
+ /*
+  SerialEvent occurs whenever a new data comes in the hardware serial RX. This
+  routine is run between each time loop() runs, so using delay inside loop can
+  delay response. Multiple bytes of data may be available.
+*/
+void serialEvent() {
+  
+  while (Serial.available()) {
+    // get the new byte:
+    char inChar = (char)Serial.read();
+    // add it to the inputString:
+    inputString += inChar;
+    // if the incoming character is a newline, set a flag so the main loop can
+    // do something about it:
+    //if (inChar == '\n') {
+      receivedSerial = true;
+      
+    //}
+  }
+}
+
 
 /*
  * METHODS FOR WORKING WITH PIXEL-LED MOVEMENTS
