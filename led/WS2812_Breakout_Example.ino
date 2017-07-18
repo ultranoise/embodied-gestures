@@ -33,12 +33,13 @@ void setup()
 {
   leds.begin();  // Call this to start up the LED strip.
   clearLEDs();   // This function, defined below, turns all LEDs off...
-  leds.setBrightness(200);
+  leds.setBrightness(250);
   leds.show();   // ...but the LEDs don't actually update until you call this.
 }
 
 void loop()
 {
+  /*
   // Ride the Rainbow Road
   for (int i=0; i<LED_COUNT*1; i++)
   {
@@ -53,6 +54,7 @@ void loop()
     // cylon function: first param is color, second is time (in ms) between cycles
     cylon(WHITE, 100);  // Indigo cylon eye!
   }
+
   
   // A light shower of spring green rain
   // This will run the cascade from top->bottom 20 times
@@ -61,7 +63,75 @@ void loop()
     // First parameter is the color, second is direction, third is ms between falls
     cascade(WHITE, TOP_DOWN, 100); //SILVER, LIGHTCORAL, WHITESMOKE, GOSTWHITE, ANTIQUEWHITE
   }
+  */
+  //cascade(WHITE, TOP_DOWN, 100);
+  //gotoled(WHITE, 30, 60, 20);
+  ledPos(IVORY, 1000, 50, 60);
+  
+  //gotoled(WHITE, 55, 40, 20);
+  //gotoled(WHITE, 40, 45, 40);
+  //for(int i=0;i<20;i++){
+    //gotoled(WHITE, 40+random(10), 45+random(10), 50);
+  //}
+  /*
+  for(int i = 0;i<200;i++){
+    leds.setBrightness(255 - i);
+    leds.show();   // ...but the LEDs don't actually update until you call this.
+    delay(10);
+  }
+  for(int i = 0;i<200;i++){
+    leds.setBrightness(55 + i);
+    leds.show();   // ...but the LEDs don't actually update until you call this.
+    delay(10);
+  }
+  */
+  dimout(255,155,10);
+  dimin(155,200,10);
+  dimout(180,50,10);
+  dimin(50,255,10);
+ 
+
+  
 }
+
+void dimout(int first, int last, int wait){
+  for(int i = 0;i<(first-last);i++){
+    leds.setBrightness(first - i);
+    leds.show();   // ...but the LEDs don't actually update until you call this.
+    delay(10);
+  }
+}
+
+void dimin(int first, int last, int wait){
+  for(int i = 0;i<(last-first);i++){
+    leds.setBrightness(first + i);
+    leds.show();   // ...but the LEDs don't actually update until you call this.
+    delay(wait);
+  }
+
+}
+
+
+void ledPos(unsigned long color, int wait, int first, int last){
+
+      clearLEDs();  // Turn off all LEDs
+
+      //leds.setPixelColor(first, color);
+      
+      for(int i=first;i<last;i++){
+        leds.setPixelColor(i, color);  // Set just this one
+      }
+      
+      
+      leds.show();
+      delay(wait);
+    
+}
+
+
+
+
+
 
 // Implements a little larson "cylon" sanner.
 // This'll run one full cycle, down one way and back the other
@@ -111,6 +181,34 @@ void cylon(unsigned long color, byte wait)
 }
 
 // Cascades a single direction. One time.
+void gotoled(unsigned long color, int from, int to, byte wait)
+{
+  if (to>from)
+  {
+    for (int i=from; i<to; i++)
+    {
+      clearLEDs();  // Turn off all LEDs
+      leds.setPixelColor(i, color);  // Set just this one
+      leds.show();
+      delay(wait);
+    }
+  }
+  else
+  {
+    for (int i=from-1; i>=to; i--)
+    {
+      clearLEDs();
+      leds.setPixelColor(i, color);
+      leds.show();
+      delay(wait);
+    }
+  }
+}
+
+
+
+
+// Cascades a single direction. One time.
 void cascade(unsigned long color, byte direction, byte wait)
 {
   if (direction == TOP_DOWN)
@@ -134,6 +232,7 @@ void cascade(unsigned long color, byte direction, byte wait)
     }
   }
 }
+
 
 // Sets all LEDs to off, but DOES NOT update the display;
 // call leds.show() to actually turn them off after this.
