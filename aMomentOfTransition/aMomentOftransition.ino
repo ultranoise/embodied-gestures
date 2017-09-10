@@ -76,6 +76,8 @@ int figureall[28] = {0,18, 19, 22, 37, 38, 39, 40, 41,43, 44, 45, 46, 66, 67, 72
 
 int sec2_2=0;
 
+boolean note = false;
+
 void setup()
 {
   Serial.begin(9600);
