@@ -78,6 +78,13 @@ int sec2_2=0;
 
 boolean note = false;
 
+
+
+unsigned long t =0; //23000; // 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
+
+
+
+
 void setup()
 {
   Serial.begin(9600);
@@ -111,7 +118,7 @@ void loop() {
 
 //DO NOT TOUCH THESE LINES BELOW /////////////////// 
   //first:  update timer
-  currentMillis = millis();
+  currentMillis = millis() + t;
   
   //second: clear strip every frame
    clearLEDs();  // Turn off all LEDs
@@ -149,13 +156,13 @@ void loop() {
       usbMIDI.sendNoteOn(60, 99, channel);
         
       Serial.println("ready to performance");
-      previousMillis = currentMillis;
+      previousMillis = currentMillis + t;
     }
     
     if (inputString =="1") {      //WAIT TWO MINUTES
       section = 1;
       Serial.println("start performance");
-      previousMillis = currentMillis;
+      previousMillis = currentMillis + t;
       delay(120000);
       
     }
@@ -169,7 +176,7 @@ void loop() {
       previousMillis = millis();
 
        //sec2_2= 0; 
-      sec2_2= 49000/6; 
+      sec2_2= 8100; 
     }
     
     if (inputString =="9") { //TEST ALL LEDS   
