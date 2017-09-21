@@ -80,7 +80,7 @@ boolean note = false;
 
 
 
-unsigned long t =0; //23000; // 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
+unsigned long t =0; // 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
 
 
 

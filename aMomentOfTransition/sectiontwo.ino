@@ -732,7 +732,7 @@ void sectiontwo() {
 
 //////////////
 ///PARTE DE COMUNICACION
-// LINGUISTICA ENTRE LUCES  t= 23000
+// LINGUISTICA ENTRE LUCES  t= 27000
 //////////////
   //pregunta
     if (currentMillis - previousMillis > sec2_2 + 16500 && currentMillis - previousMillis < sec2_2 + 16700) { 
@@ -745,7 +745,7 @@ void sectiontwo() {
    }
    if (currentMillis - previousMillis > sec2_2 + 17200 && currentMillis - previousMillis < sec2_2 + 17300) { 
       ledBlock(IVORY, 238, 239);
-      dimin(30,3);
+      dimin(40,1);
    }
    if (currentMillis - previousMillis > sec2_2 + 17100 && currentMillis - previousMillis < sec2_2 + 17400) { 
       ledBlock(IVORY, 238, 239);
@@ -760,118 +760,284 @@ void sectiontwo() {
       ledBlock(IVORY, 235, 237);
       dimout(0,5);
    }
-   //pregunta otra vez
-   if (currentMillis - previousMillis > sec2_2 + 19500 && currentMillis - previousMillis < sec2_2 + 19700) { 
+   //pregunta otra vez [19500]
+   /*
+   if (currentMillis - previousMillis > sec2_2 + 19500 && currentMillis - previousMillis < sec2_2 + 20400) { 
+      ledBlock(IVORY, 238, 239);
+      dimin(40,3);
+   }
+  */
+  if (currentMillis - previousMillis > sec2_2 + 19200 && currentMillis - previousMillis < sec2_2 + 19400) { 
       ledBlock(IVORY, 238, 239);
       dimin(30,3);
    }
-   if (currentMillis - previousMillis > sec2_2 + 20100 && currentMillis - previousMillis < sec2_2 + 20200) { 
+   if (currentMillis - previousMillis > sec2_2 + 19800 && currentMillis - previousMillis < sec2_2 + 19900) { 
       ledBlock(IVORY, 238, 239);
       dimout(0,3);
    }
-
-   //pequeños aparecen
-   if (currentMillis - previousMillis > sec2_2 + 20200 && currentMillis - previousMillis < sec2_2 + 20250) { 
-      brightness = 60;
-   }  
-   if (currentMillis - previousMillis > sec2_2 + 20400 && currentMillis - previousMillis < sec2_2 + 20500) { 
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 20500 && currentMillis - previousMillis < sec2_2 + 20650) { 
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 20650 && currentMillis - previousMillis < sec2_2 + 20800) { 
-      ledBlock(IVORY, 222, 222);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 20800 && currentMillis - previousMillis < sec2_2 + 20900) { 
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 222, 222);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 20900 && currentMillis - previousMillis < sec2_2 + 21100) { 
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 222, 222);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 21100 && currentMillis - previousMillis < sec2_2 + 21250) { 
-      ledBlock(IVORY, 233, 233);
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 222, 222);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 21250 && currentMillis - previousMillis < sec2_2 + 21650) { 
-      ledBlock(IVORY, 234, 234);
-      ledBlock(IVORY, 233, 233);
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 222, 222);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 21650 && currentMillis - previousMillis < sec2_2 + 21950) { 
-      ledBlock(IVORY, 234, 234);
-      ledBlock(IVORY, 233, 233);
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 21950 && currentMillis - previousMillis < sec2_2 + 22100) { 
-      ledBlock(IVORY, 234, 234);
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 243, 243);
-      ledBlock(IVORY, 242, 242);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 22100 && currentMillis - previousMillis < sec2_2 + 22130) { 
-      ledBlock(IVORY, 234, 234);
-      ledBlock(IVORY, 232, 232);
-      ledBlock(IVORY, 243, 243);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 22130 && currentMillis - previousMillis < sec2_2 + 22150) { 
-      ledBlock(IVORY, 234, 234);
-      ledBlock(IVORY, 243, 243);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 22150 && currentMillis - previousMillis < sec2_2 + 22160) { 
-      ledBlock(IVORY, 234, 234);
-      //dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 22450 && currentMillis - previousMillis < sec2_2 + 22750) { 
-      brightness = 0;
-   }
-  //pregunta
-    if (currentMillis - previousMillis > sec2_2 + 22750 && currentMillis - previousMillis < sec2_2 + 23350) { 
+   if (currentMillis - previousMillis > sec2_2 + 19900 && currentMillis - previousMillis < sec2_2 + 20000) { 
       ledBlock(IVORY, 238, 239);
-      dimin(30,3);
-   } 
-   if (currentMillis - previousMillis > sec2_2 + 23350 && currentMillis - previousMillis < sec2_2 + 23750) { 
-      ledBlock(IVORY, 238, 239);
-      dimout(0,3);
+      dimin(40,1);
    }
-   if (currentMillis - previousMillis > sec2_2 + 23750 && currentMillis - previousMillis < sec2_2 + 24050) { 
-      ledBlock(IVORY, 238, 239);
-      dimin(30,3);
-   }
-   if (currentMillis - previousMillis > sec2_2 + 24050 && currentMillis - previousMillis < sec2_2 + 24450) { 
+   if (currentMillis - previousMillis > sec2_2 + 19800 && currentMillis - previousMillis < sec2_2 + 20100) { 
       ledBlock(IVORY, 238, 239);
       dimout(0,5);
    }
+
    //pequeños aparecen
-   if (currentMillis - previousMillis > sec2_2 + 24550 && currentMillis - previousMillis < sec2_2 + 25550) { 
+   if (currentMillis - previousMillis > sec2_2 + 20400 && currentMillis - previousMillis < sec2_2 + 20420) { 
+      ledBlock(IVORY, 242, 242);
+      //ledBlock(IVORY, 238, 239);
+      ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20420 && currentMillis - previousMillis < sec2_2 + 20440) { 
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+       
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20440 && currentMillis - previousMillis < sec2_2 + 20460) { 
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242); 
+
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20460 && currentMillis - previousMillis < sec2_2 + 20480) { 
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20480 && currentMillis - previousMillis < sec2_2 + 20500) { 
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+      
+      ledBlock(IVORY, 233, 233);  
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20500 && currentMillis - previousMillis < sec2_2 + 20520) { 
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233);
+       ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20520 && currentMillis - previousMillis < sec2_2 + 20540) { 
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20540 && currentMillis - previousMillis < sec2_2 + 20560) { 
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+       
+       ledBlock(IVORY, 233, 233);  
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20560 && currentMillis - previousMillis < sec2_2 + 20580) { 
+      ledBlock(IVORY, 222, 222);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 20580 && currentMillis - previousMillis < sec2_2 + 20600) { 
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 133, 133);
+       ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   //aqui estan todos juntos
+   if (currentMillis - previousMillis > sec2_2 + 20600 && currentMillis - previousMillis < sec2_2 + 21400) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 21400 && currentMillis - previousMillis < sec2_2 + 22000) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22000 && currentMillis - previousMillis < sec2_2 + 22050) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22050 && currentMillis - previousMillis < sec2_2 + 22100) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+     ledBlock(IVORY, 233, 233); 
+     ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22100 && currentMillis - previousMillis < sec2_2 + 22150) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296); 
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22150 && currentMillis - previousMillis < sec2_2 + 22200) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22200 && currentMillis - previousMillis < sec2_2 + 22240) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22240 && currentMillis - previousMillis < sec2_2 + 22260) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22260 && currentMillis - previousMillis < sec2_2 + 22280) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22280 && currentMillis - previousMillis < sec2_2 + 22290) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 233, 233);
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22290 && currentMillis - previousMillis < sec2_2 + 22300) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 233, 233); 
+      ledBlock(IVORY, 296, 296);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 22310 && currentMillis - previousMillis < sec2_2 + 22750) { 
+      brightness = 0;
+   }
+   
+  //pregunta otra vez el pesado
+   /*
+    if (currentMillis - previousMillis > sec2_2 + 22750 && currentMillis - previousMillis < sec2_2 + 23350) { 
+      ledBlock(IVORY, 238, 239);
+      dimin(30,3);
+   }
+   */
+   if (currentMillis - previousMillis > sec2_2 + 22750 && currentMillis - previousMillis < sec2_2 + 22950) { 
+      ledBlock(IVORY, 238, 239);
+      dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 23350 && currentMillis - previousMillis < sec2_2 + 23450) { 
+      ledBlock(IVORY, 238, 239);
+      dimout(0,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 23450 && currentMillis - previousMillis < sec2_2 + 23550) { 
+      ledBlock(IVORY, 238, 239);
+      dimin(40,1);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 23350 && currentMillis - previousMillis < sec2_2 + 23650) { 
+      ledBlock(IVORY, 238, 239);
+      dimout(0,5);
+   } 
+
+   //pequeños aparecen
+   if (currentMillis - previousMillis > sec2_2 + 23650 && currentMillis - previousMillis < sec2_2 + 24650) { 
       brightness = 40;
       ledBlock(IVORY, 238, 239);
       
@@ -883,12 +1049,12 @@ void sectiontwo() {
       ledBlock(IVORY, 242, 242);
       //dimin(30,3);
    }
-   //aparece el gordo lentamente
-   if (currentMillis - previousMillis > sec2_2 + 25550 && currentMillis - previousMillis < sec2_2 + 26750) { 
+   //aparece el gordo 
+   if (currentMillis - previousMillis > sec2_2 + 24650 && currentMillis - previousMillis < sec2_2 + 24750) { 
       ledBlock(IVORY, 238, 239);
       
-      ledBlock(IVORY, 209, 211);
-      ledBlock(IVORY, 212, 221);
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
 
       ledBlock(IVORY, 234, 234);
       ledBlock(IVORY, 233, 233);
@@ -899,24 +1065,274 @@ void sectiontwo() {
       
    }
    //se van los pequeños
-   if (currentMillis - previousMillis > sec2_2 + 26750 && currentMillis - previousMillis < sec2_2 + 27750) { 
+   if (currentMillis - previousMillis > sec2_2 + 24750 && currentMillis - previousMillis < sec2_2 + 25150) { 
       ledBlock(IVORY, 238, 239);
       
-      ledBlock(IVORY, 209, 211);
-      ledBlock(IVORY, 212, 221);
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
       
    }
-   if (currentMillis - previousMillis > sec2_2 + 27750 && currentMillis - previousMillis < sec2_2 + 28350) { 
+   //dimin-out de nervios
+   if (currentMillis - previousMillis > sec2_2 + 25150 && currentMillis - previousMillis < sec2_2 + 25250) { 
       ledBlock(IVORY, 238, 239);
       
-      ledBlock(IVORY, 209, 211);
-      ledBlock(IVORY, 212, 221);
-      dimout(0,40);
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,5);
    }
-   if (currentMillis - previousMillis > sec2_2 + 28350 && currentMillis - previousMillis < sec2_2 + 28550) { 
+   if (currentMillis - previousMillis > sec2_2 + 25250 && currentMillis - previousMillis < sec2_2 + 25350) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimin(30,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25350 && currentMillis - previousMillis < sec2_2 + 25450) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25450 && currentMillis - previousMillis < sec2_2 + 25550) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimin(30,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25550 && currentMillis - previousMillis < sec2_2 + 25650) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25650 && currentMillis - previousMillis < sec2_2 + 25750) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimin(30,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25750 && currentMillis - previousMillis < sec2_2 + 25850) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25850 && currentMillis - previousMillis < sec2_2 + 25950) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimin(30,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 25950 && currentMillis - previousMillis < sec2_2 + 26050) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,5);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 26050 && currentMillis - previousMillis < sec2_2 + 26450) { 
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimin(30,5);
+   }
+
+   
+   //se lo come
+   if (currentMillis - previousMillis > sec2_2 + 26450 && currentMillis - previousMillis < sec2_2 + 26850) { 
+      //brightness = 40;
+      ledBlock(DARKRED, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      
+   }
+   //muere
+   if (currentMillis - previousMillis > sec2_2 + 26850 && currentMillis - previousMillis < sec2_2 + 29050) { 
+      
+      ledBlock(DARKRED, 238, 239);
+      
+      ledBlock(DARKRED, 209, 211);
+      ledBlock(DARKRED, 212, 221);
+      dimout(0,45);
+      
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29050 && currentMillis - previousMillis < sec2_2 + 29150) { 
+      brightness = 0;  
+   }
+   
+   //pequeños aparecen de nuevo y se rien
+     if (currentMillis - previousMillis > sec2_2 + 29150 && currentMillis - previousMillis < sec2_2 + 29200) { 
+       brightness = 30; 
+      ledBlock(IVORY, 242, 242);
+      //ledBlock(IVORY, 238, 239);
+      ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29200 && currentMillis - previousMillis < sec2_2 + 29250) { 
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+       
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29250 && currentMillis - previousMillis < sec2_2 + 29310) { 
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242); 
+
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29310 && currentMillis - previousMillis < sec2_2 + 29330) { 
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29330 && currentMillis - previousMillis < sec2_2 + 29350) { 
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+      
+      ledBlock(IVORY, 233, 233);  
+      ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29350 && currentMillis - previousMillis < sec2_2 + 29370) { 
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233);
+       ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29370 && currentMillis - previousMillis < sec2_2 + 29390) { 
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29390 && currentMillis - previousMillis < sec2_2 + 29410) { 
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+       
+       ledBlock(IVORY, 233, 233);  
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29410 && currentMillis - previousMillis < sec2_2 + 29430) { 
+      ledBlock(IVORY, 222, 222);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 29430 && currentMillis - previousMillis < sec2_2 + 29450) { 
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 133, 133);
+       ledBlock(IVORY, 296, 296); 
+      //dimin(30,3);
+   }
+   //aqui estan todos juntos
+   if (currentMillis - previousMillis > sec2_2 + 29450 && currentMillis - previousMillis < sec2_2 + 29950) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+      //dimin(30,3);
+   }
+   //legan más monstruos
+   if (currentMillis - previousMillis > sec2_2 + 29950 && currentMillis - previousMillis < sec2_2 + 30150) { 
+      ledBlock(IVORY, 208, 208);
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 83, 83);
+      ledBlock(IVORY, 155, 155);
+      ledBlock(IVORY, 194, 194);
+      ledBlock(IVORY, 58, 58);
+      ledBlock(IVORY, 147, 147);
+      ledBlock(IVORY, 28, 28);
+      ledBlock(IVORY, 167, 167);
+      ledBlock(IVORY, 242, 242);
+     
+       ledBlock(IVORY, 233, 233); 
+       ledBlock(IVORY, 296, 296);
+
+      ledBlock(DARKRED, 35, 57);
+       ledBlock(DARKRED, 128, 133);
+       ledBlock(DARKRED, 244, 258);
+      //dimin(30,3);
+   }
+   //se van
+   if (currentMillis - previousMillis > sec2_2 + 30150 && currentMillis - previousMillis < sec2_2 + 33950) { 
+
+
+      ledBlock(DARKRED, 35, 57);
+       ledBlock(DARKRED, 128, 133);
+       ledBlock(DARKRED, 244, 258);
+       dimout(0,25);
+      //dimin(30,3);
+   }
+   
+   if (currentMillis - previousMillis > sec2_2 + 33950 && currentMillis - previousMillis < sec2_2 + 42050) { 
       brightness = 0;
-      
    }
+
 
 
    
