@@ -1331,6 +1331,7 @@ void sectiontwo() {
    
    if (currentMillis - previousMillis > sec2_2 + 33950 && currentMillis - previousMillis < sec2_2 + 42050) { 
       brightness = 0;
+      sec3 = sec2_2 + 42050;
    }
 
 

@@ -74,16 +74,20 @@ int figure8[2] = {93,95};
 int figure9[2] = {96,100};
 int figureall[28] = {0,18, 19, 22, 37, 38, 39, 40, 41,43, 44, 45, 46, 66, 67, 72, 73, 81, 101, 106, 107, 120, 82, 92, 93, 95, 96, 100};
 
-int sec2_2=0;
+unsigned long sec2_2=0;
+unsigned long sec3=0;
 
 boolean note = false;
 
 
 
-unsigned long t =0; // 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
+unsigned long t = 0; //14000; 
 
+//SECCION 2:
+// 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
 
-
+bool s1 = false;
+bool s2 = false;
 
 void setup()
 {
@@ -178,6 +182,19 @@ void loop() {
        //sec2_2= 0; 
       sec2_2= 8100; 
     }
+    if (inputString =="3") { //PRIMER SOLO CON TANGIBLE SCORES
+      section = 3;
+      Serial.println("SECTION 3");
+      
+      //leds.setBrightness(0);
+      //leds.show();
+      brightness=0;
+      previousMillis = millis();
+
+      sec3 = sec2_2 + 42050;  //(50000)
+      s1=true;
+      s2 = true;
+    }
     
     if (inputString =="9") { //TEST ALL LEDS   
       // Ride the Rainbow Road
@@ -196,6 +213,9 @@ void loop() {
 
   if(section == 2){  //SECTION 2  =  4MINUTES
     sectiontwo();
+  }
+  if(section == 3){  //SECTION 2  =  4MINUTES
+    sectionthree();
   }
 
 
