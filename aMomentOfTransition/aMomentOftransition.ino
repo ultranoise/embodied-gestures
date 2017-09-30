@@ -203,6 +203,9 @@ void loop() {
         delay(500);  // Delay between rainbow slides
       }
     }
+    if (inputString =="m") { //PRIMER SOLO CON TANGIBLE SCORES
+      usbMIDI.sendNoteOn(36, 127, 9);
+    }
 
     // clear the string:
     inputString = "";

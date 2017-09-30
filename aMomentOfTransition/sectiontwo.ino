@@ -87,47 +87,47 @@ void sectiontwo() {
    if (currentMillis - previousMillis > sec2_2 + 50 && currentMillis - previousMillis < sec2_2 + 60) {    
       int r=random(298);
       ledBlock(IVORY, r, r); 
-      usbMIDI.sendNoteOn(27, 99, 4); 
+      usbMIDI.sendNoteOn(27, 120, 4); 
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 60 && currentMillis - previousMillis < sec2_2 + 70) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(29, 99, 4);   
+      usbMIDI.sendNoteOn(29, 120, 4);   
              
    }
    if (currentMillis - previousMillis > sec2_2 + 70 && currentMillis - previousMillis < sec2_2 + 80) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(31, 99, 4);           
+      usbMIDI.sendNoteOn(31, 120, 4);           
    }
    if (currentMillis - previousMillis > sec2_2 + 80 && currentMillis - previousMillis < sec2_2 + 90) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(33, 99, 4); 
+      usbMIDI.sendNoteOn(33, 120, 4); 
         
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 90 && currentMillis - previousMillis < sec2_2 + 100) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(35, 99, 4);   
+      usbMIDI.sendNoteOn(35, 120, 4);   
        //usbMIDI.sendNoteOff(27, 99, 4);      
    }
    if (currentMillis - previousMillis > sec2_2 + 100 && currentMillis - previousMillis < sec2_2 + 110) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(37, 99, 4); 
+      usbMIDI.sendNoteOn(37, 120, 4); 
       //usbMIDI.sendNoteOff(37, 99, 4);          
    }
    if (currentMillis - previousMillis > sec2_2 + 110 && currentMillis - previousMillis < sec2_2 + 120) {    
       ledBlock(IVORY, 70, 70);
-      usbMIDI.sendNoteOn(39, 99, 4);   
+      usbMIDI.sendNoteOn(39, 120, 4);   
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 120 && currentMillis - previousMillis < sec2_2 + 130) {    
       ledBlock(IVORY, 170, 170);
-      usbMIDI.sendNoteOn(41, 99, 4);   
+      usbMIDI.sendNoteOn(41, 120, 4);   
              
    }
    if (currentMillis - previousMillis > sec2_2 + 130 && currentMillis - previousMillis < sec2_2 + 140) {    
@@ -152,47 +152,47 @@ void sectiontwo() {
    if (currentMillis - previousMillis > sec2_2 + 150 && currentMillis - previousMillis < sec2_2 + 160) {    
       int r=random(298);
       ledBlock(IVORY, r, r); 
-      usbMIDI.sendNoteOn(27, 99, 4); 
+      usbMIDI.sendNoteOn(27, 120, 4); 
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 160 && currentMillis - previousMillis < sec2_2 + 170) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(29, 99, 4);   
+      usbMIDI.sendNoteOn(29, 120, 4);   
              
    }
    if (currentMillis - previousMillis > sec2_2 + 170 && currentMillis - previousMillis < sec2_2 + 180) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(31, 99, 4);           
+      usbMIDI.sendNoteOn(31, 120, 4);           
    }
    if (currentMillis - previousMillis > sec2_2 + 180 && currentMillis - previousMillis < sec2_2 + 190) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(33, 99, 4); 
+      usbMIDI.sendNoteOn(33, 120, 4); 
         
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 190 && currentMillis - previousMillis < sec2_2 + 200) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(35, 99, 4);   
+      usbMIDI.sendNoteOn(35, 120, 4);   
        //usbMIDI.sendNoteOff(27, 99, 4);      
    }
    if (currentMillis - previousMillis > sec2_2 + 200 && currentMillis - previousMillis < sec2_2 + 210) {    
       int r=random(298);
       ledBlock(IVORY, r, r);
-      usbMIDI.sendNoteOn(37, 99, 4); 
+      usbMIDI.sendNoteOn(37, 120, 4); 
       //usbMIDI.sendNoteOff(37, 99, 4);          
    }
    if (currentMillis - previousMillis > sec2_2 + 210 && currentMillis - previousMillis < sec2_2 + 220) {    
       ledBlock(IVORY, 70, 70);
-      usbMIDI.sendNoteOn(39, 99, 4);   
+      usbMIDI.sendNoteOn(39, 120, 4);   
              
    }  
    if (currentMillis - previousMillis > sec2_2 + 220 && currentMillis - previousMillis < sec2_2 + 230) {    
       ledBlock(IVORY, 170, 170);
-      usbMIDI.sendNoteOn(41, 99, 4);   
+      usbMIDI.sendNoteOn(41, 120, 4);   
              
    }
    if (currentMillis - previousMillis > sec2_2 + 230 && currentMillis - previousMillis < sec2_2 + 240) {    
@@ -216,33 +216,42 @@ void sectiontwo() {
    if (currentMillis - previousMillis > sec2_2 + 500 && currentMillis - previousMillis < sec2_2 + 600) {
     //ledBlock(IVORY, 225, 231);
     dimout(0,20);
-      usbMIDI.sendNoteOff(120, 127, 4);
-      usbMIDI.sendNoteOff(110, 127, 4); 
-      usbMIDI.sendNoteOff(27, 99, 4);
-      usbMIDI.sendNoteOff(29, 99, 4);
-      usbMIDI.sendNoteOff(31, 99, 4);
-      usbMIDI.sendNoteOff(33, 99, 4); 
-      usbMIDI.sendNoteOff(35, 99, 4);
-      usbMIDI.sendNoteOff(37, 99, 4);
-      usbMIDI.sendNoteOff(39, 99, 4);
-      usbMIDI.sendNoteOff(41, 99, 4); 
+      usbMIDI.sendNoteOff(120, 0, 4);
+      usbMIDI.sendNoteOff(110, 0, 4); 
+      usbMIDI.sendNoteOff(27, 0, 4);
+      usbMIDI.sendNoteOff(29, 0, 4);
+      usbMIDI.sendNoteOff(31, 0, 4);
+      usbMIDI.sendNoteOff(33, 0, 4); 
+      usbMIDI.sendNoteOff(35, 0, 4);
+      usbMIDI.sendNoteOff(37, 0, 4);
+      usbMIDI.sendNoteOff(39, 0, 4);
+      usbMIDI.sendNoteOff(41, 0, 4); 
       brightness = 0;
       pixel_loc[1] =  5;
       pixel_loc[2] =  80;
-      
+      note = false;
+      //Serial.println("aquiiiiiiiiiiiiii");  
    }
    //SILENCIO APAGO TODO
+
+
 
    ///GESTO 2
    ///////
    if (currentMillis - previousMillis > sec2_2 + 610 && currentMillis - previousMillis < sec2_2 + 620) {    
       brightness = 180;
-            
+      //note = true;
+      //Serial.println("aquiiiiiiiiiiiiii");      
    }
    if (currentMillis - previousMillis > sec2_2 + 620 && currentMillis - previousMillis < sec2_2 + 630) {    
       ledBlock(IVORY, 70, 70);  
       //Serial.println("seccion 2 part 2");
-             
+      /*
+      if(note){
+             usbMIDI.sendNoteOn(36, 127, 9);
+             note = false;
+      }
+      */
    }  
    if (currentMillis - previousMillis > sec2_2 + 630 && currentMillis - previousMillis < sec2_2 + 640) {    
       ledBlock(IVORY, 170, 170);  
@@ -384,16 +393,16 @@ void sectiontwo() {
    if (currentMillis - previousMillis > sec2_2 + 1050 && currentMillis - previousMillis < sec2_2 + 1200) {
     //ledBlock(IVORY, 225, 231);
     dimout(0,20);
-      usbMIDI.sendNoteOff(120, 127, 4);
-      usbMIDI.sendNoteOff(110, 127, 4); 
-      usbMIDI.sendNoteOff(27, 99, 4);
-      usbMIDI.sendNoteOff(29, 99, 4);
-      usbMIDI.sendNoteOff(31, 99, 4);
-      usbMIDI.sendNoteOff(33, 99, 4); 
-      usbMIDI.sendNoteOff(35, 99, 4);
-      usbMIDI.sendNoteOff(37, 99, 4);
-      usbMIDI.sendNoteOff(39, 99, 4);
-      usbMIDI.sendNoteOff(41, 99, 4); 
+      usbMIDI.sendNoteOff(120, 0, 4);
+      usbMIDI.sendNoteOff(110, 0, 4); 
+      usbMIDI.sendNoteOff(27, 0, 4);
+      usbMIDI.sendNoteOff(29, 0, 4);
+      usbMIDI.sendNoteOff(31, 0, 4);
+      usbMIDI.sendNoteOff(33, 0, 4); 
+      usbMIDI.sendNoteOff(35, 0, 4);
+      usbMIDI.sendNoteOff(37, 0, 4);
+      usbMIDI.sendNoteOff(39, 0, 4);
+      usbMIDI.sendNoteOff(41, 0, 4); 
       brightness = 0;
       pixel_loc[1] =  5;
       pixel_loc[2] =  80;
@@ -556,20 +565,21 @@ void sectiontwo() {
    if (currentMillis - previousMillis > sec2_2 + 1750 && currentMillis - previousMillis < sec2_2 + 2000) {
     //ledBlock(IVORY, 225, 231);
     dimout(0,20);
-      usbMIDI.sendNoteOff(120, 127, 4);
-      usbMIDI.sendNoteOff(110, 127, 4); 
-      usbMIDI.sendNoteOff(27, 99, 4);
-      usbMIDI.sendNoteOff(29, 99, 4);
-      usbMIDI.sendNoteOff(31, 99, 4);
-      usbMIDI.sendNoteOff(33, 99, 4); 
-      usbMIDI.sendNoteOff(35, 99, 4);
-      usbMIDI.sendNoteOff(37, 99, 4);
-      usbMIDI.sendNoteOff(39, 99, 4);
-      usbMIDI.sendNoteOff(41, 99, 4); 
+      usbMIDI.sendNoteOff(120, 0, 4);
+      usbMIDI.sendNoteOff(110, 0, 4); 
+      usbMIDI.sendNoteOff(27, 0, 4);
+      usbMIDI.sendNoteOff(29, 0, 4);
+      usbMIDI.sendNoteOff(31, 0, 4);
+      usbMIDI.sendNoteOff(33, 0, 4); 
+      usbMIDI.sendNoteOff(35, 0, 4);
+      usbMIDI.sendNoteOff(37, 0, 4);
+      usbMIDI.sendNoteOff(39, 0, 4);
+      usbMIDI.sendNoteOff(41, 0, 4); 
       brightness = 0;
       pixel_loc[1] =  5;
       pixel_loc[2] =  80;
-      
+      note = true;
+      //Serial.println("traveliiiiiing 2");
    }
    //SILENCIO APAGO TODO
 
@@ -583,6 +593,14 @@ void sectiontwo() {
       brightness = 180;
       
       gotoled(IVORY, pixel_loc[1], 18, 20, 1);
+      //Serial.println("traveliiiiiing 1");
+      
+      if(note){
+             usbMIDI.sendNoteOn(36, 127, 9);
+             note = false;
+             Serial.println("traveliiiiiing");
+      }
+      
                           
    }
    if (currentMillis - previousMillis > sec2_2 + 2400 && currentMillis - previousMillis < sec2_2 + 2600) {    
@@ -1037,7 +1055,26 @@ void sectiontwo() {
    } 
 
    //pequeños aparecen
-   if (currentMillis - previousMillis > sec2_2 + 23650 && currentMillis - previousMillis < sec2_2 + 24650) { 
+   if (currentMillis - previousMillis > sec2_2 + 23650 && currentMillis - previousMillis < sec2_2 + 23950) { 
+      brightness = 40;
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 233, 233);
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 23950 && currentMillis - previousMillis < sec2_2 + 24350) { 
+      brightness = 40;
+      ledBlock(IVORY, 238, 239);
+      
+      ledBlock(IVORY, 234, 234);
+      ledBlock(IVORY, 233, 233);
+      ledBlock(IVORY, 232, 232);
+      ledBlock(IVORY, 222, 222);
+
+      //dimin(30,3);
+   }
+   if (currentMillis - previousMillis > sec2_2 + 24350 && currentMillis - previousMillis < sec2_2 + 24650) { 
       brightness = 40;
       ledBlock(IVORY, 238, 239);
       
