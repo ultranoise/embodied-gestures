@@ -78,8 +78,7 @@ unsigned long sec2_2=0;
 unsigned long sec3=0;
 
 boolean note = false;
-
-
+boolean start2= true;
 
 unsigned long t = 0; //14000; 
 
@@ -95,7 +94,7 @@ void setup()
   // reserve 200 bytes for the inputString:
   inputString.reserve(200);
 
-  //MIDI
+  //MIDI INPUT
   usbMIDI.setHandleNoteOn(OnNoteOn);
   
   leds.begin();  // Call this to start up the LED strip.
@@ -116,8 +115,17 @@ void setup()
 
   Serial.println("ready");
   brightness = 0;
+
+  //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+  usbMIDI.sendNoteOn(99, 127, 11);
+  usbMIDI.sendNoteOn(99, 127, 12);
+  usbMIDI.sendNoteOn(99, 127, 13);
 }
 
+
+///////
+///LOOP
+///////
 void loop() {
 
 //DO NOT TOUCH THESE LINES BELOW /////////////////// 
@@ -154,9 +162,7 @@ void loop() {
       clearLEDs();   // This function, defined below, turns all LEDs off...
       leds.setBrightness(40);
       leds.show();   // ...but the LEDs don't actually update until you call this.
-
-
-      
+ 
       usbMIDI.sendNoteOn(60, 99, channel);
         
       Serial.println("ready to performance");
@@ -167,12 +173,23 @@ void loop() {
       section = 1;
       Serial.println("start performance");
       previousMillis = currentMillis + t;
+      
+      //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+      usbMIDI.sendNoteOn(99, 127, 11);
+      usbMIDI.sendNoteOn(99, 127, 12);
+      usbMIDI.sendNoteOn(99, 127, 13);
+      
       delay(120000);
       
     }
     if (inputString =="2") {
       section = 2;
       Serial.println("SECTION 2");
+
+      //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+      usbMIDI.sendNoteOn(99, 127, 11);
+      usbMIDI.sendNoteOn(99, 127, 12);
+      usbMIDI.sendNoteOn(99, 127, 13);
       
       //leds.setBrightness(0);
       //leds.show();
@@ -185,7 +202,12 @@ void loop() {
     if (inputString =="3") { //PRIMER SOLO CON TANGIBLE SCORES
       section = 3;
       Serial.println("SECTION 3");
-      
+
+      //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+     usbMIDI.sendNoteOn(1, 127, 11);
+     usbMIDI.sendNoteOn(1, 127, 12);
+     usbMIDI.sendNoteOn(1, 127, 13);
+     
       //leds.setBrightness(0);
       //leds.show();
       brightness=0;
@@ -321,7 +343,7 @@ void serialEvent() {
 }
 
 /*
- * MIDI READ
+ * MIDI READ NOTE ON
  *
  */
 
@@ -333,6 +355,17 @@ void OnNoteOn(byte channel, byte note, byte velocity) {
   Serial.print(", velocity=");
   Serial.print(velocity, DEC);
   Serial.println();
+
+  //START 
+  if(start2){
+   if(channel == 3){
+    if(note == 83){
+      section = 2; 
+      start2 = false;
+      Serial.println("a section 2");
+    } 
+   }
+  }
 }
 
 
@@ -390,6 +423,30 @@ void gotoledfull(unsigned long color, int from, int to, int rate, int pix_number
  ledBlock(color, from, pixel_loc[pix_number]); 
 }
 
+
+void gotoledfull2(unsigned long color, int from, int to, int rate, int pix_number) {
+   
+    if (to>=from) {
+      if (currentMillis - pixel_timer[pix_number] >= rate) {
+        pixel_timer[pix_number] = currentMillis;
+        if(pixel_loc[pix_number] < to){
+          pixel_loc[pix_number] = pixel_loc[pix_number] + 1;      
+        }   
+      }
+            
+    }
+    else {
+      if (currentMillis - pixel_timer[pix_number] >= rate) {
+        pixel_timer[pix_number] = currentMillis;
+        if(pixel_loc[pix_number] > to) {
+          pixel_loc[pix_number] = pixel_loc[pix_number] - 1;
+        }  
+      }               
+    }  
+  
+ //leds.setPixelColor(pixel_loc[pix_number], color);  // Set just this one
+ ledBlock(color, from, pixel_loc[pix_number]); 
+}
 
 
 

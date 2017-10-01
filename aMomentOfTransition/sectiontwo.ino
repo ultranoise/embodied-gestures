@@ -594,7 +594,8 @@ void sectiontwo() {
       
       gotoled(IVORY, pixel_loc[1], 18, 20, 1);
       //Serial.println("traveliiiiiing 1");
-      
+
+      //TRIGGER AUDIO IN LIVE ABLETON
       if(note){
              usbMIDI.sendNoteOn(36, 127, 9);
              note = false;
@@ -1354,6 +1355,7 @@ void sectiontwo() {
        ledBlock(DARKRED, 128, 133);
        ledBlock(DARKRED, 244, 258);
       //dimin(30,3);
+      note = false;
    }
    //se van
    if (currentMillis - previousMillis > sec2_2 + 30150 && currentMillis - previousMillis < sec2_2 + 33950) { 
@@ -1364,11 +1366,35 @@ void sectiontwo() {
        ledBlock(DARKRED, 244, 258);
        dimout(0,25);
       //dimin(30,3);
+
+      note = true;
    }
    
    if (currentMillis - previousMillis > sec2_2 + 33950 && currentMillis - previousMillis < sec2_2 + 42050) { 
-      brightness = 0;
-      sec3 = sec2_2 + 42050;
+
+
+     if(note) {
+         
+        note = false;
+     
+       //INIT TANGIBLE SCORES TO START TS (AREA 99)
+        usbMIDI.sendNoteOn(1, 127, 11);
+        usbMIDI.sendNoteOn(1, 127, 12);
+        usbMIDI.sendNoteOn(1, 127, 13);
+
+      
+        //leds.setBrightness(0);
+        //leds.show();
+        brightness=0;
+        previousMillis = millis();
+
+        sec3 = sec2_2 + 42050;  //(50000)
+        s1=true;
+        s2 = true;
+
+        section = 3;
+        Serial.println("SECTION 3");     
+      }
    }
 
 
