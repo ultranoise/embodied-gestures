@@ -76,6 +76,7 @@ int figureall[28] = {0,18, 19, 22, 37, 38, 39, 40, 41,43, 44, 45, 46, 66, 67, 72
 
 unsigned long sec2_2=0;
 unsigned long sec3=0;
+unsigned long sec4=0;
 
 boolean note = false;
 boolean start2= true;
@@ -217,6 +218,25 @@ void loop() {
       s1=true;
       s2 = true;
     }
+
+    if (inputString =="4") { //SOLO LUCES DULCE
+      section = 4;
+      Serial.println("SECTION 4");
+
+      //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+     usbMIDI.sendNoteOn(99, 127, 11);
+     usbMIDI.sendNoteOn(99, 127, 12);
+     usbMIDI.sendNoteOn(99, 127, 13);
+     
+      //leds.setBrightness(0);
+      //leds.show();
+      brightness=0;
+      previousMillis = millis();
+
+      sec4 = sec3 + 51500;  //(50000)
+      //s1=true;
+      //s2 = true;
+    }
     
     if (inputString =="9") { //TEST ALL LEDS   
       // Ride the Rainbow Road
@@ -239,8 +259,11 @@ void loop() {
   if(section == 2){  //SECTION 2  =  4MINUTES
     sectiontwo();
   }
-  if(section == 3){  //SECTION 2  =  4MINUTES
+  if(section == 3){  //SECTION 3  =  4MINUTES
     sectionthree();
+  }
+  if(section == 4){  //SECTION 4  =  4MINUTES
+    sectionfour();
   }
 
 

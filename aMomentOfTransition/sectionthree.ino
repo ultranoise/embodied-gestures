@@ -41,20 +41,14 @@ void sectionthree() {
       dimin(40,10);
       
    }
-   if (currentMillis - previousMillis  > 5000 && currentMillis - previousMillis < 7000) {   
+   if (currentMillis - previousMillis  > 5000 && currentMillis - previousMillis < 6500) {   
       ledBlock(IVORY, 70, 80);   
       dimout(0,10);
-      if(s2){
-        //usbMIDI.sendNoteOn(4, 99, 11);
-        //usbMIDI.sendNoteOn(4, 99, 12);
-        //usbMIDI.sendNoteOn(4, 99, 13);
-        s2=false;
-        s1=true; 
-      }
+
    } 
 
 
-   if (currentMillis - previousMillis  > 7000 && currentMillis - previousMillis < 9000) {
+   if (currentMillis - previousMillis  > 6500 && currentMillis - previousMillis < 9000) {
       if(note){
         //usbMIDI.sendNoteOn(19, 22, 4);
         note=false;
@@ -62,7 +56,7 @@ void sectionthree() {
       }  
       
       ledBlock(IVORY, 19, 22);   
-      dimin(40,10);
+      dimin(40,20);
       
    }
    if (currentMillis - previousMillis  > 9000 && currentMillis - previousMillis < 10000) {   
@@ -391,6 +385,8 @@ void sectionthree() {
       pixel_loc[3] = 0;
 
       dimout(0,35);
+      s1= true;
+      s2= true;
    }
    //IR CRECIENDO
    /*//ESTO MOLA SON MOVIMIENTOS GRACIOSOS
@@ -402,9 +398,18 @@ void sectionthree() {
   
    }*/
    
-   if (currentMillis - previousMillis  > 29500 && currentMillis - previousMillis < 34500) {   
+   if (currentMillis - previousMillis  > 29500 && currentMillis - previousMillis < 35500) {   
+    //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+        if(s1){
+          usbMIDI.sendNoteOn(2, 127, 11);
+          usbMIDI.sendNoteOn(2, 127, 12);
+          usbMIDI.sendNoteOn(2, 127, 13); 
+          s1=false;
+        }
+        
        //dimin(40,15);
        brightness = 40;
+       
        gotoledfull2(IVORY, 0, 32, 23, 4);
        gotoledfull2(IVORY, 109, 152, 23, 5);
        gotoledfull2(IVORY, 199, 242, 23, 6);
@@ -412,7 +417,7 @@ void sectionthree() {
        //Serial.println("1");
   
    }
-   if (currentMillis - previousMillis  > 34500 && currentMillis - previousMillis < 39500) {   
+   if (currentMillis - previousMillis  > 35500 && currentMillis - previousMillis < 41500) {   
        //dimin(40,15);
        //brightness = 40;
        gotoledfull2(IVORY, 33, 76, 23, 1);
@@ -431,9 +436,16 @@ void sectionthree() {
        //dimout(0,50);
        //Serial.println("111");
    }
-   if (currentMillis - previousMillis  > 44500 && currentMillis - previousMillis < 49500) {   
+   if (currentMillis - previousMillis  > 44500 && currentMillis - previousMillis < 51500) {   
        //dimin(40,15);
        brightness = 40;
+      if(s2){
+          usbMIDI.sendNoteOn(1, 127, 11);
+          usbMIDI.sendNoteOn(1, 127, 12);
+          usbMIDI.sendNoteOn(1, 127, 13); 
+          s1=false;
+        }
+       
        gotoledfull2(IVORY, 0, 108, 23, 4);
        gotoledfull2(IVORY, 109, 198, 23, 2);
        gotoledfull2(IVORY, 198, 298, 23, 3);
