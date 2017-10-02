@@ -81,7 +81,7 @@ unsigned long sec4=0;
 boolean note = false;
 boolean start2= true;
 
-unsigned long t = 0; //14000; 
+unsigned long t = 0; //6000; //6000; 
 
 //SECCION 2:
 // 10000; //11000;  //TIME OFFSET TO DEBUG OR JUMP  //8100 PARTE 2, 11000 TRAVELLING
