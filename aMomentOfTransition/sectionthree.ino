@@ -449,8 +449,40 @@ void sectionthree() {
        gotoledfull2(IVORY, 0, 108, 23, 4);
        gotoledfull2(IVORY, 109, 198, 23, 2);
        gotoledfull2(IVORY, 198, 298, 23, 3);
+       note =true;
        //Serial.println("1111");
    }
+   if (currentMillis - previousMillis  > 51500 && currentMillis - previousMillis < 51550) {   
+       if(note) {
+         
+        note = false;
+     
+       //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+       usbMIDI.sendNoteOn(99, 127, 11);
+       usbMIDI.sendNoteOn(99, 127, 12);
+       usbMIDI.sendNoteOn(99, 127, 13);
+     
+       //leds.setBrightness(0);
+       //leds.show();
+       brightness=0;
+       previousMillis = millis();
+
+       sec4 = sec3 + 51500;  
+
+        section = 4;                        //VAMONOS A LA SIGUIENTE SECCION
+        Serial.println("SECTION 4");     
+      } 
+   }
+
+
+
+
+
+
+
+   ////
+   
+   ///
 
 
 

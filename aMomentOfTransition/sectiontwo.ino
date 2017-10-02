@@ -1392,7 +1392,7 @@ void sectiontwo() {
         s1=true;
         s2 = true;
 
-        section = 3;
+        section = 3;                        //VAMONOS A LA SIGUIENTE SECCION
         Serial.println("SECTION 3");     
       }
    }

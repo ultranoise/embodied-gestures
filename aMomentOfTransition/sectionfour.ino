@@ -624,6 +624,27 @@ void sectionfour() {
       //gotoledfull2(STEELBLUE, 198, 298, 23, 1);  
       gotoledfull2(STEELBLUE, 0, 108, 23, 3); 
   }
+  if (currentMillis - previousMillis  > 50200 && currentMillis - previousMillis < 50250) {   
+       if(note) {
+         
+        note = false;
+     
+       //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+       usbMIDI.sendNoteOn(99, 127, 11);
+       usbMIDI.sendNoteOn(99, 127, 12);
+       usbMIDI.sendNoteOn(99, 127, 13);
+     
+       //leds.setBrightness(0);
+       //leds.show();
+       brightness=0;
+       previousMillis = millis();
+
+       sec5 = sec4 + 50200; 
+
+        section = 5;                        //VAMONOS A LA SIGUIENTE SECCION
+        Serial.println("SECTION 5");     
+      } 
+   }
   
 
 }  ///END OF SECTION FOUR
