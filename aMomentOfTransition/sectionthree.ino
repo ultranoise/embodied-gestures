@@ -3,7 +3,7 @@ void sectionthree() {
    if (currentMillis - previousMillis  > 10 && currentMillis - previousMillis < 3000) {
       
       if(s1){
-        //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+        //INIT TANGIBLE SCORES 
         usbMIDI.sendNoteOn(1, 127, 11);
         usbMIDI.sendNoteOn(1, 127, 12);
         usbMIDI.sendNoteOn(1, 127, 13);
@@ -401,9 +401,9 @@ void sectionthree() {
    if (currentMillis - previousMillis  > 29500 && currentMillis - previousMillis < 35500) {   
     //INIT TANGIBLE SCORES TO MUTE (AREA 99)
         if(s1){
-          usbMIDI.sendNoteOn(2, 127, 11);
-          usbMIDI.sendNoteOn(2, 127, 12);
-          usbMIDI.sendNoteOn(2, 127, 13); 
+          usbMIDI.sendNoteOn(4, 127, 11);
+          usbMIDI.sendNoteOn(4, 127, 12);
+          usbMIDI.sendNoteOn(4, 127, 13); 
           s1=false;
         }
         
@@ -440,9 +440,9 @@ void sectionthree() {
        //dimin(40,15);
        brightness = 40;
       if(s2){
-          usbMIDI.sendNoteOn(1, 127, 11);
-          usbMIDI.sendNoteOn(1, 127, 12);
-          usbMIDI.sendNoteOn(1, 127, 13); 
+          usbMIDI.sendNoteOn(3, 127, 11);
+          usbMIDI.sendNoteOn(3, 127, 12);
+          usbMIDI.sendNoteOn(3, 127, 13); 
           s1=false;
         }
        
@@ -452,7 +452,10 @@ void sectionthree() {
        note =true;
        //Serial.println("1111");
    }
-   if (currentMillis - previousMillis  > 51500 && currentMillis - previousMillis < 51550) {   
+   if (currentMillis - previousMillis  > 51500 && currentMillis - previousMillis < 52500) {   
+       
+   }
+   if (currentMillis - previousMillis  > 52500 && currentMillis - previousMillis < 52550) {   
        if(note) {
          
         note = false;
@@ -467,11 +470,15 @@ void sectionthree() {
        brightness=0;
        previousMillis = millis();
 
-       sec4 = sec3 + 51500;  
+       sec4 = sec3 + 52500;  
 
         section = 4;                        //VAMONOS A LA SIGUIENTE SECCION
-        Serial.println("SECTION 4");     
+        Serial.println("SECTION 4"); 
+
+       //play the music for section 4
+        usbMIDI.sendNoteOn(7, 127, 3);    //trigger subida-todo-Bonita.wav
       } 
+      
    }
 
 

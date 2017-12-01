@@ -572,6 +572,7 @@ void sectionfour() {
 
       //gotoledfull2(STEELBLUE, 180, 197, 23, 1);  
       pixel_loc[3] = 0;
+      note = true;
   }
   if (currentMillis - previousMillis  > 18200 && currentMillis - previousMillis < 20200) {
     brightness = 70;
@@ -597,6 +598,18 @@ void sectionfour() {
 
       gotoledfull2(STEELBLUE, 198, 298, 23, 1);  
       //gotoledfull2(STEELBLUE, 0, 108, 23, 3); 
+
+      if(note) {
+         
+        note = false;
+     
+       //ACTIVATE TANGIBLE SCORES 
+       usbMIDI.sendNoteOn(1, 127, 11);
+       usbMIDI.sendNoteOn(1, 127, 12);
+       usbMIDI.sendNoteOn(1, 127, 13);
+       
+      }
+      
   }
   if (currentMillis - previousMillis  > 20200 && currentMillis - previousMillis < 50200) {
     brightness = 70;
@@ -623,13 +636,14 @@ void sectionfour() {
 
       //gotoledfull2(STEELBLUE, 198, 298, 23, 1);  
       gotoledfull2(STEELBLUE, 0, 108, 23, 3); 
+      note = true;
   }
   if (currentMillis - previousMillis  > 50200 && currentMillis - previousMillis < 50250) {   
        if(note) {
          
         note = false;
      
-       //INIT TANGIBLE SCORES TO MUTE (AREA 99)
+       //MUTE TANGIBLE SCORES (AREA 99)
        usbMIDI.sendNoteOn(99, 127, 11);
        usbMIDI.sendNoteOn(99, 127, 12);
        usbMIDI.sendNoteOn(99, 127, 13);
@@ -639,7 +653,7 @@ void sectionfour() {
        brightness=0;
        previousMillis = millis();
 
-       sec5 = sec4 + 50200; 
+       sec5 = sec4 + 50250; 
 
         section = 5;                        //VAMONOS A LA SIGUIENTE SECCION
         Serial.println("SECTION 5");     

@@ -235,9 +235,12 @@ void loop() {
       brightness=0;
       previousMillis = millis();
 
-      sec4 = sec3 + 51500;  //(50000)
+      sec4 = sec3 + 52500;  //(50000)
       //s1=true;
       //s2 = true;
+      
+      //play the music for section 4
+        usbMIDI.sendNoteOn(7, 127, 3);    //trigger subida-todo-Bonita.wav
     }
 
     if (inputString =="5") { //NOISE CONCERTANTE
@@ -258,6 +261,13 @@ void loop() {
       //s1=true;
       //s2 = true;
     }
+    if (inputString =="6") { //NOISE CONCERTANTE
+      section = 6;
+      Serial.println("SECTION 6");
+
+      brightness=0;
+      previousMillis = millis();
+    }
     
     if (inputString =="9") { //TEST ALL LEDS   
       // Ride the Rainbow Road
@@ -266,8 +276,8 @@ void loop() {
         delay(500);  // Delay between rainbow slides
       }
     }
-    if (inputString =="m") { //PRIMER SOLO CON TANGIBLE SCORES
-      usbMIDI.sendNoteOn(36, 127, 9);
+    if (inputString =="m") { //for midi learning in live ableton
+      usbMIDI.sendNoteOn(10, 127, 3); 
     }
 
     // clear the string:
@@ -286,8 +296,11 @@ void loop() {
   if(section == 4){  //SECTION 4  =  4MINUTES
     sectionfour();
   }
-  if(section == 5){  //SECTION 4  =  4MINUTES
+  if(section == 5){  //SECTION 5  =  4MINUTES
     sectionfive();
+  }
+  if(section == 6){  
+    sectionsix();
   }
 
 
